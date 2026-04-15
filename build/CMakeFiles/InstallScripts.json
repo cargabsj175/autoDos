@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"C:/autoDos/AutoDOS (1)/AutoDOS/build/cmake_install.cmake",
-		"C:/autoDos/AutoDOS (1)/AutoDOS/build/_deps/nlohmann_json-build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

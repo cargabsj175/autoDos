@@ -1,3 +1,167 @@
- I have a 64 bit version and 32 bit version. AutoDos32 is running DosBox 0.74 which is the last windows XP version, so you could run it on old machines. Written in C/C++, only 9mb. Super simple way to play MS DOS games with out the the head ache of complex configuration, it’s all done for you under The hood! 
+#AutoDOS
 
-Install instructions: You just download the zip file, extract and you’ll see the AutoDos.exe file, click on that and your done, play hundreds of games!
+This repository maintains the original AutoDOS for Windows and adds separate forks for Linux and macOS.
+
+The original README is preserved unchanged in `README_ORIGINAL.md`.
+
+# What was done
+
+- The original Windows project is preserved in the repository root.
+
+- The Linux fork is added to `linux/`.
+
+- The macOS fork is added to `macos/`.
+
+- Build scripts for Windows, Linux, and macOS will be added.
+
+- A script to compile the Windows binary from Linux using MinGW-w64 has been added.
+
+- Cleanup scripts for POSIX and Windows environments have been added.
+
+##Structure
+
+```text
+AutoDOS/
+├── src/ Original Windows Project
+├── Linux/Linux Fork
+├── macos/ macOS Fork
+├── build-windows.ps1 Compiles Windows from Windows
+├── build-windows-from-linux.sh Compiles Windows from Linux with MinGW-w64
+├── build-linux.sh Compiles the Linux fork
+├── build-macos.sh Compiles the macOS fork
+├── clean.sh Cleans up Linux/macOS
+├── clean.ps1 Cleans up Windows
+├── README.md New main README
+└── README_ORIGINAL.md README Original preserved
+```
+
+## Compiler on Windows
+
+Requirements:
+
+- Visual Studio 2022 or 2019 with the C++ workload.
+
+- CMake.
+
+- Go.
+
+
+Command:
+
+```powershell
+.\build-windows.ps1
+```
+
+Compiling in Debug mode:
+
+```powershell
+.\build-windows.ps1 - Configuration debugging
+```
+
+Output:
+
+```text
+dist/AutoDOS.exe
+```
+
+## Compiler for Windows from Linux
+
+Requirements:
+
+```sudo apt install cmake git mingw-w64
+```
+
+Command:
+
+```sudo
+./build-windows-from-linux.sh
+```
+
+Compiling in Debug mode:
+
+```sudo
+./build-windows-from-linux.sh Debugging
+```
+
+Output:
+
+```text
+dist-windows/AutoDOS.exe
+```
+
+## Compiler on Linux
+
+Requirements Recommended:
+
+```tap
+update sudo apt
+sudo apt install cmake g++ git nlohmann-json3-dev libglfw3-dev libgl1-mesa-dev dosbox
+```
+
+Command:
+
+```tap
+./build-linux.sh
+```
+
+Compiling in Debug mode:
+
+```tap
+./build-linux.sh Debug
+```
+
+Output:
+
+```text
+linux/dist/
+```
+
+## Compile on macOS
+
+Recommended requirements:
+
+```tap
+install beer cmake nlohmann-json sdl2 sdl2_ttf
+```
+
+Command:
+
+```tap
+./build-macos.sh
+```
+
+Compiling in mode Debug:
+
+```tap
+./build-macos.sh Debug
+```
+
+Build DMG:
+
+```tap
+./build-macos.sh Launch --dmg
+```
+
+Output:
+
+```text
+macos/dist/
+```
+
+## Clean up builds
+
+Linux/macOS:
+
+```tap
+./clean.sh
+```
+
+Windows:
+
+```powershell
+.\clean.ps1
+```
+
+Clean up scripts remove build and distribution artifacts:
+`build/`, `dist/`, `linux/build-linux/`, `linux/dist/`, `macos/build/`,
+`macos/dist/` and related temporary files.
