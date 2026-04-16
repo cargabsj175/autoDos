@@ -68,19 +68,20 @@ dist/AutoDOS.exe
 
 Requirements:
 
-```sudo apt install cmake git mingw-w64
+```
+sudo apt install cmake git mingw-w64
 ```
 
 Command:
 
-```sudo
-./build-windows-from-linux.sh
+```
+sudo ./build-windows-from-linux.sh
 ```
 
 Compiling in Debug mode:
 
-```sudo
-./build-windows-from-linux.sh Debugging
+```
+sudo ./build-windows-from-linux.sh Debugging
 ```
 
 Output:
@@ -121,7 +122,7 @@ linux/dist/
 Recommended requirements:
 
 ```tap
-install beer cmake nlohmann-json sdl2 sdl2_ttf
+install brew cmake nlohmann-json sdl2 sdl2_ttf
 ```
 
 Command:
