@@ -20,7 +20,7 @@ The original README is preserved unchanged in `README_ORIGINAL.md`.
 
 ##Structure
 
-```text
+```
 AutoDOS/
 ├── src/ Original Windows Project
 ├── Linux/Linux Fork
@@ -86,7 +86,7 @@ sudo ./build-windows-from-linux.sh Debugging
 
 Output:
 
-```text
+```
 dist-windows/AutoDOS.exe
 ```
 
@@ -94,26 +94,26 @@ dist-windows/AutoDOS.exe
 
 Requirements Recommended:
 
-```tap
-update sudo apt
+```
+sudo update sudo apt
 sudo apt install cmake g++ git nlohmann-json3-dev libglfw3-dev libgl1-mesa-dev dosbox
 ```
 
 Command:
 
-```tap
+```
 ./build-linux.sh
 ```
 
 Compiling in Debug mode:
 
-```tap
+```
 ./build-linux.sh Debug
 ```
 
 Output:
 
-```text
+```
 linux/dist/
 ```
 
@@ -122,7 +122,7 @@ linux/dist/
 Recommended requirements:
 
 ```tap
-install brew cmake nlohmann-json sdl2 sdl2_ttf
+brew install cmake nlohmann-json sdl2 sdl2_ttf
 ```
 
 Command:
@@ -153,13 +153,13 @@ macos/dist/
 
 Linux/macOS:
 
-```tap
+```
 ./clean.sh
 ```
 
 Windows:
 
-```powershell
+```
 .\clean.ps1
 ```
 
